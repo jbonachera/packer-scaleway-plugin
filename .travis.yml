@@ -1,0 +1,20 @@
+sudo: required
+language: go
+services:
+- docker
+script:
+  - docker build -t jbonachera/packer-scaleway-plugin .
+  - docker create --name artifacts jbonachera/packer-scaleway-plugin
+  - docker cp artifacts:/usr/bin/packer-builder-scaleway-volumesurrogate ./packer-builder-scaleway-volumesurrogate
+  - docker rm artifacts
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: H4sGD4Yif03lIy8De4790O2r2nVxKujtQUXZo20TV1yz251FxyFeALJMmwIy6II0gVmwcuheT3TWGncexzFPw6YkflG5GE65USCQ4D4wbt8sXvTRCr0Z7awuha9sLehzTjxE6GQPFq5IkrWneh/TzUUa8naWoOJvEYTMMYfF2QuF601tMThD7vCa3/mvnX24soPve+OWDrQklc8PcGELf6Lufk6sFD+JG5OFWdDEG5HBI1/M32lxV2jhoJz82Jvuygf9pwPjEWDEdCNfJEijEgJG+eAS9+6jofDtjNsDiQqHoVwhTPADSrDVAdfltjdd8gn3Q7MjpYUywMnV6g2SRazEumjT+hLvA3hep//rilju+BC5Uyl1ONzDfBW/0H5SxBBKXyMQ5zWHpl4pM3C6gV8vwsMRYJ+Qo4lo3FqAkc8BLvqtxhCe8RX0JQ1KVKdk4dgliNYrFFZ162jOoZrSkj3SXmK5syHA+wKMnKMZCOu2RB8TlbGxIyRDO0PKyqrmC5bGdqEVBuTX/6+SsGMqjOWkOpHh/eRxCtO3edN8+2qoNeZ3kS9gFCfuaKHaU/otl49VRD3Ohnqf7YF9jU+rmEdG9NRMqsVMOrniA+Ct4Ls0zcQzeov011tBtyZPEUZ6XKHXu7QRoa6b/XJc9AhI5LUEzOiu3nw1YwOAXsT1rUI=
+  file:
+  - ./packer-builder-scaleway-volumesurrogate
+  on:
+    repo: jbonachera/packer-scaleway-plugin
+    tags: true
+

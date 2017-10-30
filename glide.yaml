@@ -1,0 +1,21 @@
+package: github.com/jbonachera/packer-scaleway-plugin
+import:
+- package: github.com/hashicorp/packer
+  version: ~1.1.1
+  subpackages:
+  - common
+  - helper/config
+  - packer
+  - packer/plugin
+  - communicator/ssh
+  - template/interpolate
+  - helper/communicator
+- package: github.com/mitchellh/multistep
+- package: github.com/scaleway/scaleway-cli
+  version: ~1.14.0
+  subpackages:
+  - pkg/api
+- package: golang.org/x/crypto
+  version: 0fe963104e9d1877082f8fb38f816fcd97eb1d10
+  subpackages:
+  - ssh

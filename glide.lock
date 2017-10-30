@@ -1,0 +1,179 @@
+hash: f71be995708a5acd6f28acf3c87d10a614b802f390cb93798a0444dff2217361
+updated: 2018-05-19T13:02:45.830671221+02:00
+imports:
+- name: github.com/Azure/go-ntlmssp
+  version: 4b934ac9dad38d389d34f0b98d98b2467c422012
+- name: github.com/ChrisTrenkamp/goxpath
+  version: c385f95c6022e7756e91beac5f5510872f7dcb7d
+  subpackages:
+  - internal/execxp
+  - internal/execxp/findutil
+  - internal/execxp/intfns
+  - internal/xsort
+  - lexer
+  - parser
+  - parser/pathexpr
+  - tree
+  - tree/xmltree
+  - tree/xmltree/xmlbuilder
+  - tree/xmltree/xmlele
+  - tree/xmltree/xmlnode
+  - xconst
+- name: github.com/creack/goselect
+  version: 40085cf5fd629ccd88dc328895f1f137d09a1de4
+- name: github.com/docker/docker
+  version: 1e4068713bdc7ac57c5134ae0469dc7ecefb8445
+  subpackages:
+  - pkg/archive
+  - pkg/fileutils
+  - pkg/homedir
+  - pkg/idtools
+  - pkg/ioutils
+  - pkg/longpath
+  - pkg/mflag
+  - pkg/namesgenerator
+  - pkg/pools
+  - pkg/promise
+  - pkg/random
+  - pkg/system
+- name: github.com/dustin/go-humanize
+  version: f3565c9525600a911af3bd34f8b535ea81b2a9e0
+- name: github.com/dylanmei/iso8601
+  version: 2075bf119b58e5576c6ed9f867b8f3d17f2e54d4
+- name: github.com/gorilla/websocket
+  version: 1f512fc3f05332ba7117626cdfb4e07474e58e60
+- name: github.com/hashicorp/errwrap
+  version: 7554cd9344cec97297fa6649b055a8c98c2a1e55
+- name: github.com/hashicorp/go-checkpoint
+  version: 1545e56e46dec3bba264e41fde2c1e2aa65b5dd4
+- name: github.com/hashicorp/go-cleanhttp
+  version: d5fe4b57a186c716b0e00b8c301cbd9b4182694d
+- name: github.com/hashicorp/go-multierror
+  version: b7773ae218740a7be65057fc60b366a49b538a44
+- name: github.com/hashicorp/go-uuid
+  version: 27454136f0364f2d44b1276c552d69105cf8c498
+- name: github.com/hashicorp/go-version
+  version: 23480c0665776210b5fbbac6eaaee40e3e6a96b7
+- name: github.com/hashicorp/packer
+  version: 9698d7283f790aa1d3755ccbd95a1a1cdea9390a
+  subpackages:
+  - common
+  - common/ssh
+  - common/uuid
+  - communicator/none
+  - communicator/ssh
+  - communicator/winrm
+  - helper/communicator
+  - helper/config
+  - packer
+  - packer/plugin
+  - packer/rpc
+  - template
+  - template/interpolate
+  - version
+- name: github.com/hashicorp/yamux
+  version: 2658be15c5f05e76244154714161f17e3e77de2e
+- name: github.com/kr/fs
+  version: 1455def202f6e05b95cc7bfc7e8ae67ae5141eba
+- name: github.com/masterzen/azure-sdk-for-go
+  version: ee4f0065d00cd12b542f18f5bc45799e88163b12
+  subpackages:
+  - core/http
+  - core/tls
+- name: github.com/masterzen/simplexml
+  version: 4572e39b1ab9fe03ee513ce6fc7e289e98482190
+  subpackages:
+  - dom
+- name: github.com/masterzen/winrm
+  version: 7e40f93ae939004a1ef3bd5ff5c88c756ee762bb
+  subpackages:
+  - soap
+- name: github.com/mattn/go-isatty
+  version: 56b76bdf51f7708750eac80fa38b952bb9f32639
+- name: github.com/mitchellh/go-fs
+  version: b7b9ca407ffff465de12fc37ccbb81ea8b428c43
+  subpackages:
+  - fat
+- name: github.com/mitchellh/iochan
+  version: 87b45ffd0e9581375c491fef3d32130bb15c5bd7
+- name: github.com/mitchellh/mapstructure
+  version: bb74f1db0675b241733089d5a1faa5dd8b0ef57b
+- name: github.com/mitchellh/multistep
+  version: 391576a156a54cfbb4cf5d5eda40cf6ffa3e3a4d
+- name: github.com/mitchellh/reflectwalk
+  version: 63d60e9d0dbc60cf9164e6510889b0db6683d98c
+- name: github.com/moul/anonuuid
+  version: 609b752a95effbbef26d134ac18ed6f57e01b98e
+- name: github.com/moul/gotty-client
+  version: 92f0c24d5b2985522174e3ff5ad882a1c4d7f1d9
+- name: github.com/nu7hatch/gouuid
+  version: 179d4d0c4d8d407a32af483c2354df1d2c91e6c3
+- name: github.com/packer-community/winrmcp
+  version: 81144009af586de8e7729b829266f09dd0d59701
+  subpackages:
+  - winrmcp
+- name: github.com/pkg/errors
+  version: 816c9085562cd7ee03e7f8188a1cfd942858cded
+- name: github.com/pkg/sftp
+  version: d2aa419835609d317c34baae11bc345d1f9971a7
+- name: github.com/renstrom/fuzzysearch
+  version: 2d205ac6ec17a839a94bdbfd16d2fa6c6dada2e0
+  subpackages:
+  - fuzzy
+- name: github.com/scaleway/scaleway-cli
+  version: 4c4502fd13230d91b52d99a6069cffffea536a5e
+  subpackages:
+  - pkg/api
+  - pkg/sshcommand
+  - pkg/utils
+- name: github.com/Sirupsen/logrus
+  version: 6d9ae300aaf85d6acd2e5424081c7fcddb21dab8
+- name: github.com/ugorji/go
+  version: f3cacc17c85ecb7f1b6a9e373ee85d1480919868
+  subpackages:
+  - codec
+- name: golang.org/x/crypto
+  version: 0fe963104e9d1877082f8fb38f816fcd97eb1d10
+  subpackages:
+  - curve25519
+  - ed25519
+  - ed25519/internal/edwards25519
+  - md4
+  - ssh
+  - ssh/agent
+  - ssh/terminal
+- name: golang.org/x/net
+  version: dfd9ed699ea197b58a32e0d1dcfa2be66f127ec4
+  subpackages:
+  - context
+  - html
+  - html/atom
+  - html/charset
+  - proxy
+- name: golang.org/x/sync
+  version: 316e794f7b5e3df4e95175a45a5fb8b12f85cb4f
+  subpackages:
+  - errgroup
+- name: golang.org/x/sys
+  version: d4feaf1a7e61e1d9e79e6c4e76c6349e9cab0a03
+  subpackages:
+  - unix
+- name: golang.org/x/text
+  version: b19bf474d317b857955b12035d2c5acb57ce8b01
+  subpackages:
+  - encoding
+  - encoding/charmap
+  - encoding/htmlindex
+  - encoding/internal
+  - encoding/internal/identifier
+  - encoding/japanese
+  - encoding/korean
+  - encoding/simplifiedchinese
+  - encoding/traditionalchinese
+  - encoding/unicode
+  - internal/tag
+  - internal/utf8internal
+  - language
+  - runes
+  - transform
+testImports: []
