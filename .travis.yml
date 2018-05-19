@@ -9,6 +9,7 @@ script:
 - docker rm artifacts
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: hCyvjEmhWm/GVO6Lry6Onk6y5KHXTxtcFdMIsz4vQVHiewJYGBI9NWrJsxXxDC7T7/zpK2U/HPske4Ska7hlxy5wmfwMpWM8UFsygF+1qHOcViwgw2YrVS6suS2LuJzCqe+u1o+sD0B7xg6Z+b4CWgl6Z7x5OF5f7rHRiJ4AigAw6Uok1OOT/nwo3eudsD/ntsxI1nHWgZjP7VjVHEiLAxnYnM/keiG+ct1HrXlD5c6LmLW6G8fApe5R3tzJXBn6qNQbX/Mpbj9sto+0Ztta/zZd03KccbM+XSz7oBa+gV2Od4jIG9sJ1Gheq5N9n+JWzdDNN+3/w7ZT5d0s1iP6Q98KQofLQSIfGrjRBXd+bJdn6N+CKeSv5lpWH99tcU/kAS0WK8AxVC6UfB3rHCG9wnbCut1UtbLtGDURB9GP6KxPxXZnR7IS9mMnuDvgveeKX4tAScFvz2IFoYfe7WMeo/TTnGltapzmQPAnG9lHnGNypPjj/Qu0b6hpa70WlHCmUV0DEFVSpwUxJoyDRsGJASy9+Fw4dcRtmumT9eAqD6tIozD5f9w+QFL3x6UyxlOPDah2AaoMhEGHX57lo+/LTvEsoHsLNTQfk8Cu9z5aiqlpBIJyasJgotJMgqi13Kos2jYgQ4Ck+QXcOyUvWLPXH33yvnyXHpYDxzDVfcnFCy4=
   file: "./packer-builder-scaleway-volumesurrogate"
