@@ -3,18 +3,15 @@ language: go
 services:
 - docker
 script:
-  - docker build -t jbonachera/packer-scaleway-plugin .
-  - docker create --name artifacts jbonachera/packer-scaleway-plugin
-  - docker cp artifacts:/usr/bin/packer-builder-scaleway-volumesurrogate ./packer-builder-scaleway-volumesurrogate
-  - docker rm artifacts
+- docker build -t jbonachera/packer-scaleway-plugin .
+- docker create --name artifacts jbonachera/packer-scaleway-plugin
+- docker cp artifacts:/usr/bin/packer-builder-scaleway-volumesurrogate ./packer-builder-scaleway-volumesurrogate
+- docker rm artifacts
 deploy:
   provider: releases
-  skip_cleanup: true
   api_key:
-    secure: H4sGD4Yif03lIy8De4790O2r2nVxKujtQUXZo20TV1yz251FxyFeALJMmwIy6II0gVmwcuheT3TWGncexzFPw6YkflG5GE65USCQ4D4wbt8sXvTRCr0Z7awuha9sLehzTjxE6GQPFq5IkrWneh/TzUUa8naWoOJvEYTMMYfF2QuF601tMThD7vCa3/mvnX24soPve+OWDrQklc8PcGELf6Lufk6sFD+JG5OFWdDEG5HBI1/M32lxV2jhoJz82Jvuygf9pwPjEWDEdCNfJEijEgJG+eAS9+6jofDtjNsDiQqHoVwhTPADSrDVAdfltjdd8gn3Q7MjpYUywMnV6g2SRazEumjT+hLvA3hep//rilju+BC5Uyl1ONzDfBW/0H5SxBBKXyMQ5zWHpl4pM3C6gV8vwsMRYJ+Qo4lo3FqAkc8BLvqtxhCe8RX0JQ1KVKdk4dgliNYrFFZ162jOoZrSkj3SXmK5syHA+wKMnKMZCOu2RB8TlbGxIyRDO0PKyqrmC5bGdqEVBuTX/6+SsGMqjOWkOpHh/eRxCtO3edN8+2qoNeZ3kS9gFCfuaKHaU/otl49VRD3Ohnqf7YF9jU+rmEdG9NRMqsVMOrniA+Ct4Ls0zcQzeov011tBtyZPEUZ6XKHXu7QRoa6b/XJc9AhI5LUEzOiu3nw1YwOAXsT1rUI=
-  file:
-  - ./packer-builder-scaleway-volumesurrogate
+    secure: hCyvjEmhWm/GVO6Lry6Onk6y5KHXTxtcFdMIsz4vQVHiewJYGBI9NWrJsxXxDC7T7/zpK2U/HPske4Ska7hlxy5wmfwMpWM8UFsygF+1qHOcViwgw2YrVS6suS2LuJzCqe+u1o+sD0B7xg6Z+b4CWgl6Z7x5OF5f7rHRiJ4AigAw6Uok1OOT/nwo3eudsD/ntsxI1nHWgZjP7VjVHEiLAxnYnM/keiG+ct1HrXlD5c6LmLW6G8fApe5R3tzJXBn6qNQbX/Mpbj9sto+0Ztta/zZd03KccbM+XSz7oBa+gV2Od4jIG9sJ1Gheq5N9n+JWzdDNN+3/w7ZT5d0s1iP6Q98KQofLQSIfGrjRBXd+bJdn6N+CKeSv5lpWH99tcU/kAS0WK8AxVC6UfB3rHCG9wnbCut1UtbLtGDURB9GP6KxPxXZnR7IS9mMnuDvgveeKX4tAScFvz2IFoYfe7WMeo/TTnGltapzmQPAnG9lHnGNypPjj/Qu0b6hpa70WlHCmUV0DEFVSpwUxJoyDRsGJASy9+Fw4dcRtmumT9eAqD6tIozD5f9w+QFL3x6UyxlOPDah2AaoMhEGHX57lo+/LTvEsoHsLNTQfk8Cu9z5aiqlpBIJyasJgotJMgqi13Kos2jYgQ4Ck+QXcOyUvWLPXH33yvnyXHpYDxzDVfcnFCy4=
+  file: "./packer-builder-scaleway-volumesurrogate"
   on:
     repo: jbonachera/packer-scaleway-plugin
     tags: true
-
