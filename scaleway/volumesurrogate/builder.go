@@ -78,8 +78,8 @@ func (b *Builder) Run(ui packer.Ui, hook packer.Hook, cache packer.Cache) (packe
 		return nil, rawErr.(error)
 	}
 
-	img := state.Get("image-id").(string)
-	if img == "" {
+	img, ok := state.Get("image-id").(string)
+	if !ok || img == "" {
 		return nil, nil
 	}
 
