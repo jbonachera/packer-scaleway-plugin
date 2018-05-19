@@ -3,11 +3,12 @@ package volumesurrogate
 import (
 	"crypto/rand"
 	"crypto/rsa"
+	"strings"
+
 	"github.com/hashicorp/packer/packer"
 	"github.com/mitchellh/multistep"
 	"github.com/scaleway/scaleway-cli/pkg/api"
 	"golang.org/x/crypto/ssh"
-	"strings"
 )
 
 type step_create_keypair struct {
@@ -55,6 +56,7 @@ func (s *step_create_keypair) Run(state multistep.StateBag) multistep.StepAction
 }
 
 func (s *step_create_keypair) Cleanup(state multistep.StateBag) {
+	ui := state.Get("ui").(packer.Ui)
 	wantedKey := state.Get("public-key").(string)
 	scw := s.api
 	u, err := scw.GetUser()
@@ -69,6 +71,7 @@ func (s *step_create_keypair) Cleanup(state multistep.StateBag) {
 			keys[i].Fingerprint = ""
 		}
 	}
+	ui.Say("removing temporary ssh key")
 	err = scw.PatchUserSSHKey(u.ID, api.ScalewayUserPatchSSHKeyDefinition{
 		SSHPublicKeys: keys,
 	})
