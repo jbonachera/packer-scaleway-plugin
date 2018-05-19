@@ -3,15 +3,17 @@ package volumesurrogate
 import (
 	"crypto/rsa"
 	"fmt"
+	"log"
+	"time"
+
 	"github.com/hashicorp/packer/common"
 	"github.com/hashicorp/packer/helper/communicator"
 	"github.com/hashicorp/packer/helper/config"
 	"github.com/hashicorp/packer/packer"
+	"github.com/hashicorp/packer/template/interpolate"
 	"github.com/mitchellh/multistep"
 	"github.com/scaleway/scaleway-cli/pkg/api"
 	gossh "golang.org/x/crypto/ssh"
-	"log"
-	"time"
 )
 
 const (
@@ -91,7 +93,10 @@ func (b *Builder) Run(ui packer.Ui, hook packer.Hook, cache packer.Cache) (packe
 	return artifact, nil
 }
 func (b *Builder) Prepare(keys ...interface{}) ([]string, error) {
-	err := config.Decode(&b.Config, &config.DecodeOpts{Interpolate: false}, keys...)
+	err := config.Decode(&b.Config, &config.DecodeOpts{
+		Interpolate:       true,
+		InterpolateFilter: &interpolate.RenderFilter{},
+	}, keys...)
 	if err != nil {
 		return nil, err
 	}
