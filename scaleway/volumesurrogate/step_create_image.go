@@ -1,8 +1,10 @@
 package volumesurrogate
 
 import (
+	"context"
+
+	"github.com/hashicorp/packer/helper/multistep"
 	"github.com/hashicorp/packer/packer"
-	"github.com/mitchellh/multistep"
 	"github.com/scaleway/scaleway-cli/pkg/api"
 )
 
@@ -11,7 +13,7 @@ type step_create_image struct {
 	api    *api.ScalewayAPI
 }
 
-func (s *step_create_image) Run(state multistep.StateBag) multistep.StepAction {
+func (s *step_create_image) Run(ctx context.Context, state multistep.StateBag) multistep.StepAction {
 	ui := state.Get("ui").(packer.Ui)
 	id := state.Get("server-id").(string)
 	scw := s.api

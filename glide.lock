@@ -1,5 +1,5 @@
-hash: f71be995708a5acd6f28acf3c87d10a614b802f390cb93798a0444dff2217361
-updated: 2018-05-19T13:02:45.830671221+02:00
+hash: 24c389d9847320e9eac7f4efe4a4a6facaee9396bfa9e8c489d49838224dfd0f
+updated: 2018-05-20T13:38:47.749945134+02:00
 imports:
 - name: github.com/Azure/go-ntlmssp
   version: 4b934ac9dad38d389d34f0b98d98b2467c422012
@@ -55,7 +55,7 @@ imports:
 - name: github.com/hashicorp/go-version
   version: 23480c0665776210b5fbbac6eaaee40e3e6a96b7
 - name: github.com/hashicorp/packer
-  version: 9698d7283f790aa1d3755ccbd95a1a1cdea9390a
+  version: b4df69af04373ef28caef3601befcaec1f909216
   subpackages:
   - common
   - common/ssh
@@ -63,8 +63,11 @@ imports:
   - communicator/none
   - communicator/ssh
   - communicator/winrm
+  - helper/common
   - helper/communicator
   - helper/config
+  - helper/multistep
+  - helper/useragent
   - packer
   - packer/plugin
   - packer/rpc

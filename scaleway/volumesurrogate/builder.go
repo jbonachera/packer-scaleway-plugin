@@ -9,8 +9,9 @@ import (
 	"github.com/hashicorp/packer/common"
 	"github.com/hashicorp/packer/helper/communicator"
 	"github.com/hashicorp/packer/helper/config"
+	"github.com/hashicorp/packer/helper/multistep"
 	"github.com/hashicorp/packer/packer"
-	"github.com/mitchellh/multistep"
+	"github.com/hashicorp/packer/template/interpolate"
 	"github.com/scaleway/scaleway-cli/pkg/api"
 	gossh "golang.org/x/crypto/ssh"
 )
@@ -93,7 +94,11 @@ func (b *Builder) Run(ui packer.Ui, hook packer.Hook, cache packer.Cache) (packe
 }
 func (b *Builder) Prepare(keys ...interface{}) ([]string, error) {
 	err := config.Decode(&b.Config, &config.DecodeOpts{
-		Interpolate: true,
+		Interpolate:        true,
+		InterpolateContext: &b.Config.ctx,
+		InterpolateFilter: &interpolate.RenderFilter{
+			Exclude: []string{},
+		},
 	}, keys...)
 	if err != nil {
 		return nil, err

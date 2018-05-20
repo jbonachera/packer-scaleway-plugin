@@ -1,9 +1,10 @@
 package main
 
 import (
+	"log"
+
 	"github.com/hashicorp/packer/packer/plugin"
 	"github.com/jbonachera/packer-scaleway-plugin/scaleway/volumesurrogate"
-	"log"
 )
 
 func main() {

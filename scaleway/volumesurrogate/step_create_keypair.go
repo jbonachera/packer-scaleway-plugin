@@ -1,12 +1,13 @@
 package volumesurrogate
 
 import (
+	"context"
 	"crypto/rand"
 	"crypto/rsa"
 	"strings"
 
+	"github.com/hashicorp/packer/helper/multistep"
 	"github.com/hashicorp/packer/packer"
-	"github.com/mitchellh/multistep"
 	"github.com/scaleway/scaleway-cli/pkg/api"
 	"golang.org/x/crypto/ssh"
 )
@@ -16,7 +17,7 @@ type step_create_keypair struct {
 	api    *api.ScalewayAPI
 }
 
-func (s *step_create_keypair) Run(state multistep.StateBag) multistep.StepAction {
+func (s *step_create_keypair) Run(ctx context.Context, state multistep.StateBag) multistep.StepAction {
 	ui := state.Get("ui").(packer.Ui)
 	scw := s.api
 	u, err := scw.GetUser()
