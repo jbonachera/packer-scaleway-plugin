@@ -12,10 +12,14 @@ import:
   - helper/communicator
 - package: github.com/mitchellh/multistep
 - package: github.com/scaleway/scaleway-cli
-  version: ~1.14.0
+  version: 51d0290d9434dc6139dd89001236cfd989521a79
   subpackages:
   - pkg/api
 - package: golang.org/x/crypto
   version: 0fe963104e9d1877082f8fb38f816fcd97eb1d10
-  subpackages:
-  - ssh
+- package: github.com/ugorji/go
+  version: 646ae4a518c1c3be0739df898118d9bccf993858
+- package: github.com/moul/gotty-client
+  version: v1.7.0
+- package: golang.org/x/sys
+  version: 7c87d13f8e835d2fb3a70a2912c811ed0c1d241b
